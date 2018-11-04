@@ -1,0 +1,5 @@
+django==2.1.3
+psycopg2==2.7.5
+requests==2.20.0
+git+https://github.com/inoks/django-classified@db03d0
+uwsgi==2.0.17.1

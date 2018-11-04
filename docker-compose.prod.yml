@@ -1,0 +1,30 @@
+version: "3.6"
+
+services:
+
+  web:
+    depends_on:
+      - app
+    image: nginx
+    volumes:
+      - "./etc/nginx/conf.d:/etc/nginx/conf.d"
+      - "./shared:/shared"
+    ports:
+      - "80:80"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ./prod.entrypoint.sh
+    command:
+      - uwsgi
+      - --master
+      - --processes=2
+      - --threads=4
+      - --env=DJANGO_SETTINGS_MODULE=service.settings.prod
+      - --http-socket=:8000
+      - --vacuum
+      - --wsgi=service.wsgi
+    volumes:
+      - "./shared:/shared"

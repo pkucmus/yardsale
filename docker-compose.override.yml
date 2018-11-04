@@ -1,0 +1,28 @@
+version: "3.6"
+
+services:
+
+  db:
+    image: postgres:11.0
+    environment:
+      POSTGRES_PASSWORD: 'root'
+      POSTGRES_DB: 'yardsale'
+
+  smtp:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+
+  app:
+    depends_on:
+      - db
+      - smtp
+    build:
+      context: .
+      dockerfile: devel.Dockerfile
+    command: python src/service/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - "./src/service:/srv/app/src/service"
+      - "./src/snipeit:/srv/app/src/snipeit"
+    ports:
+      - "8000:8000"

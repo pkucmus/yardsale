@@ -1,0 +1,19 @@
+version: "3.6"
+
+services:
+
+  app:
+    environment:
+      DJANGO_SETTINGS_MODULE: service.settings.common
+      YARDSALE_DATABASE_NAME: "yardsale"
+      YARDSALE_DATABASE_USER: "postgres"
+      YARDSALE_DATABASE_PASSWORD: "root"
+      YARDSALE_DATABASE_HOST: "db"
+      YARDSALE_DATABASE_PORT: 5432
+      ALLOWED_HOSTS: "127.0.0.1"
+      SNIPEIT_URL: "https://snipeit"
+      SNIPEIT_API_JWT: ${SNIPEIT_JWT}
+      SNIPEIT_HTTPS_VERIFY: "false"
+      EMAIL_HOST: "smtp"
+      EMAIL_PORT: 1025
+      EMAIL_FROM: "pawel.kucmus@stxnext.pl"

@@ -1,0 +1,5 @@
+-r common.pip
+
+ipython
+readline
+ipdb
