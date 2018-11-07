@@ -20,6 +20,10 @@ class SnipeItClient:
 
         self.endpoints = self.Endpoints()
         self.register_endpoint('list_hardware', endpoints.ListHardware)
+        self.register_endpoint(
+            'get_hardware_bytag',
+            endpoints.GetHardwareByTag
+        )
 
     def register_endpoint(self, name, endpoint_class):
         setattr(self.endpoints, name, endpoint_class(client=self))

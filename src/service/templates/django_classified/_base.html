@@ -62,12 +62,6 @@
                 <li><a href="{% url 'django_classified:logout' %}?next=/">{% trans "Logout" %}</a></li>
               </ul>
             </li>
-          {% else %}
-            <li role="presentation">
-              <a href="{% url 'django_classified:profile' %}" title="{% trans "Login" %}">
-                <span class="glyphicon glyphicon-user"></span> {% trans "Login" %}
-              </a>
-            </li>
           {% endif %}
         </ul>
       </nav>

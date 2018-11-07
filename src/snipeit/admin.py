@@ -1,6 +1,8 @@
 from django.contrib import admin
+from django.conf import settings
 from django.http import HttpResponseRedirect
 from django.urls import path
+from django.utils.html import mark_safe
 from django_classified.admin import ItemAdmin
 from django_classified.models import Item, Section, Area, Group
 
@@ -9,6 +11,33 @@ from service.providers import snipeit
 
 class SnipeItItemAdmin(ItemAdmin):
     change_list_template = 'snipeit/import_from_snipeit.html'
+    readonly_fields = ('asset', )
+    list_display = (
+        'title',
+        'asset',
+        'group',
+        'area',
+        'user',
+        'is_active',
+        'posted',
+        'updated'
+    )
+
+    def asset(self, obj):
+        if obj.slug.startswith('snipeit_asset_'):
+            asset_tag = obj.slug.lstrip('snipeit_asset_')
+            return mark_safe((
+                '<a href="{snipeit_url}/hardware/{asset_tag}">{asset_tag}</a>'
+            ).format(
+                snipeit_url=settings.SNIPEIT_URL,
+                asset_tag=asset_tag
+            ))
+        else:
+            return mark_safe(
+                '<img '
+                'src="/static/admin/img/icon-no.svg" '
+                'title="not from SnipeIt">'
+            )
 
     def get_urls(self):
         urls = super().get_urls()
@@ -26,6 +55,12 @@ class SnipeItItemAdmin(ItemAdmin):
             'Manufacturer: {}  '
             'Model: {}  '
         ).format(
+            asset_data['manufacturer']['name'],
+            asset_data['model']['name']
+        )
+
+    def get_item_title(self, asset_data):
+        return '{} {}'.format(
             asset_data['manufacturer']['name'],
             asset_data['model']['name']
         )
@@ -49,7 +84,7 @@ class SnipeItItemAdmin(ItemAdmin):
                             'section': section,
                         }
                     )[0],
-                    'title': asset_data['model']['name'],
+                    'title': self.get_item_title(asset_data),
                     'description': self.get_snipeit_asset_description(
                         asset_data
                     ),

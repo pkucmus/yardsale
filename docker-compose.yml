@@ -10,10 +10,12 @@ services:
       YARDSALE_DATABASE_PASSWORD: "root"
       YARDSALE_DATABASE_HOST: "db"
       YARDSALE_DATABASE_PORT: 5432
-      ALLOWED_HOSTS: "127.0.0.1"
-      SNIPEIT_URL: "https://snipeit"
+      ALLOWED_HOSTS: "127.0.0.1,10.93.7.16"
+      SNIPEIT_URL: "https://snipeit.stxnext.local"
       SNIPEIT_API_JWT: ${SNIPEIT_JWT}
       SNIPEIT_HTTPS_VERIFY: "false"
       EMAIL_HOST: "smtp"
       EMAIL_PORT: 1025
       EMAIL_FROM: "pawel.kucmus@stxnext.pl"
+    extra_hosts:
+      - "snipeit.stxnext.local:10.93.1.37"

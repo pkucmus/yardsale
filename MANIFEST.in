@@ -1,0 +1,2 @@
+recursive-include src/service/templates *
+recursive-include src/snipeit/templates *

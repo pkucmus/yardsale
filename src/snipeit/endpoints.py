@@ -56,3 +56,11 @@ class ListHardware(Endpoint):
 
     def __call__(self, params=None):
         return self.get(self.url, params=params)
+
+
+class GetHardwareByTag(Endpoint):
+
+    PATH = 'hardware/bytag/{asset_tag}'
+
+    def __call__(self, asset_tag):
+        return self.get(self.url.format(asset_tag=asset_tag))
