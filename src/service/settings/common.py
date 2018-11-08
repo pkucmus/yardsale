@@ -1,5 +1,16 @@
 import os
 
+SENTRY_DSN = os.environ.get('SENTRY_DSN', None)
+if SENTRY_DSN is not None:
+    import sentry_sdk
+    from sentry_sdk.integrations.django import DjangoIntegration
+
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration()]
+    )
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'vp)gy*xy*ezf*9efo#1t3zao%ecyp4jz94sk)gb_g@hk%!r^y2'
