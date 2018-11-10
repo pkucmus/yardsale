@@ -51,8 +51,8 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-12" itemprop="description">
-        {{ object.description|linebreaks }}
+      <div class="col-lg-12 description" itemprop="description">
+        {{ object.description|safe|linebreaks }}
       </div>
     </div>
     {% if object.image_count %}

@@ -2,6 +2,7 @@ import os
 
 SENTRY_DSN = os.environ.get('SENTRY_DSN', None)
 if SENTRY_DSN is not None:
+    print('Initializing Sentry')
     import sentry_sdk
     from sentry_sdk.integrations.django import DjangoIntegration
 
@@ -175,6 +176,11 @@ LOGGING = {
         },
     },
     'loggers': {
+        'django': {
+            'level': 'INFO',
+            'handlers': ['console'],
+            'propagate': False
+        },
         'django.db.backends': {
             'level': 'INFO',
             'handlers': ['console'],

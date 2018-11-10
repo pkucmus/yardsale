@@ -1,0 +1,3 @@
+[submodule "python-snipeit-client"]
+	path = python-snipeit-client
+	url = git@github.com:pkucmus/python-snipeit-client.git

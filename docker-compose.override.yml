@@ -23,6 +23,7 @@ services:
     command: python src/service/manage.py runserver 0.0.0.0:8000
     volumes:
       - "./src/service:/srv/app/src/service"
-      - "./src/snipeit:/srv/app/src/snipeit"
+      - "./python-snipeit-client/src/snipeit:/srv/python-snipeit-client/src/snipeit"
+      - "./shared:/shared"
     ports:
       - "8000:8000"

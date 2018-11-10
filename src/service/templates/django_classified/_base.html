@@ -31,7 +31,11 @@
     <link href="{% static 'django_classified/css/style.css' %}" rel="stylesheet" type="text/css"/>
 
     <link rel="alternate" type="application/rss+xml" href="{% url 'django_classified:rss' %}">
-
+    <style>
+      .description ul {
+        line-height: 7pt;
+      }
+    </style>
   </head>
 
   <body>

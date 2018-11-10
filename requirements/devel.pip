@@ -3,3 +3,4 @@
 ipython
 readline
 ipdb
+-e ./../python-snipeit-client
