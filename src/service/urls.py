@@ -1,7 +1,7 @@
 from django.urls import path, re_path, include
 from django.contrib import admin
 
-from service import views
+from yardsale import views
 
 
 urlpatterns = [
@@ -11,5 +11,6 @@ urlpatterns = [
         views.ItemDetailView.as_view(),
         name='item'
     ),
+    path('reserved/', views.ReservationOutcomeView.as_view(), name='reserved'),
     path('', include('django_classified.urls')),
 ]

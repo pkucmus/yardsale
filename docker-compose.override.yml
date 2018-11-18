@@ -22,7 +22,9 @@ services:
       dockerfile: devel.Dockerfile
     command: python src/service/manage.py runserver 0.0.0.0:8000
     volumes:
-      - "./src/service:/srv/app/src/service"
+      - "./src:/srv/app/src"
+      # - "./src/service:/srv/app/src/service"
+      # - "./src/yardsale:/srv/app/src/yardsale"
       - "./python-snipeit-client/src/snipeit:/srv/python-snipeit-client/src/snipeit"
       - "./shared:/shared"
     ports:

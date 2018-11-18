@@ -2,10 +2,11 @@ from django.core.mail import EmailMessage, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import redirect
+from django.views.generic import TemplateView
 from django_classified.views import ItemDetailView
 from django_classified.models import Item
 
-
+from yardsale.models import Reservation
 from service.forms import ContactForm
 
 
@@ -45,6 +46,14 @@ class ItemDetailView(ItemDetailView):
             subject = form.cleaned_data['subject']
             to_email = instance.user.email
 
+            Reservation.objects.create(
+                email=from_email,
+                item=instance,
+                state='NEW'
+            )
+            instance.is_active = False
+            instance.save()
+
             try:
                 mail = EmailMessage(
                     subject=subject,
@@ -57,4 +66,8 @@ class ItemDetailView(ItemDetailView):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
-        return redirect(instance.get_absolute_url())
+        return redirect('reserved')
+
+
+class ReservationOutcomeView(TemplateView):
+    template_name = 'reservation_outcome.html'

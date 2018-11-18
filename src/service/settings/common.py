@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'django_classified',
     'snipeit',
+    'yardsale',
 ]
 
 MIDDLEWARE = [
