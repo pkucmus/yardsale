@@ -1,3 +1,3 @@
 -r common.pip
 
-git+https://github.com/pkucmus/python-snipeit-client@e84afde#egg=python-snipeit-client
+git+https://github.com/pkucmus/python-snipeit-client@3155ffc#egg=python-snipeit-client
