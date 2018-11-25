@@ -5,7 +5,7 @@ from django_classified.models import Item
 
 class Reservation(models.Model):
     email = models.EmailField()
-    item = models.OneToOneField(
+    item = models.ForeignKey(
         Item,
         related_name='reservation',
         on_delete=models.CASCADE

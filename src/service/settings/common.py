@@ -9,7 +9,7 @@ if SENTRY_DSN is not None:
     sentry_sdk.init(
         dsn=SENTRY_DSN,
         integrations=[DjangoIntegration()],
-        release='yardsale@1.0.0'
+        release='yardsale@1.1.0'
     )
 
 
