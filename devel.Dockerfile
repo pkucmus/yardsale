@@ -16,6 +16,8 @@ RUN mkdir /srv/app
 WORKDIR /srv/app
 
 ADD ./python-snipeit-client /srv/python-snipeit-client
+ADD ./django-classified /srv/django-classified
+
 COPY requirements /srv/app/requirements
 RUN pip install -r requirements/devel.pip
 

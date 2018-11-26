@@ -14,6 +14,7 @@ class Reservation(models.Model):
         max_length=255,
         choices=(
             ('NEW', 'NEW'),
+            ('PREPARED', 'PREPARED'),
             ('PROCESSED', 'PROCESSED'),
             ('INVALIDATED', 'INVALIDATED'),
         )

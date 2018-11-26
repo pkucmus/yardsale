@@ -20,9 +20,15 @@
 | EMAIL_HOST_USER            | Username to authenticate in the SMTP service (if required)                                                                                     | `"developer@stxnext.pl"`              |  
 | EMAIL_HOST_PASSWORD        | Password for the SMTP user (if required)                                                                                                       | `"smtp_pass"`                         |  
 | SENTRY_DSN                 | Provide your Sentry DSN to enable Sentry logging                                                                                               | `"https://<key>@sentry.io/<project>"` |  
+| ADMIN_EMAIL                | Inventory admin's email address                                                                                                                | `"admin@stxnext.pl"`                  |  
+| ACCOUNTANT_EMAIL           | Accountant's email address                                                                                                                     | `"accountant@stxnext.pl"`             |  
 
 
 ## Development
+
+Update [and initialize] the submodules.
+
+    $ git submodule update --init
 
 You can use the db and smtp defined in compose
 

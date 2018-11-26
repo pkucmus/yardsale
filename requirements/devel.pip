@@ -3,4 +3,5 @@
 ipython
 readline
 ipdb
+-e ./../django-classified
 -e ./../python-snipeit-client

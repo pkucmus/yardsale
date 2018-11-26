@@ -26,6 +26,7 @@ services:
       # - "./src/service:/srv/app/src/service"
       # - "./src/yardsale:/srv/app/src/yardsale"
       - "./python-snipeit-client/src/snipeit:/srv/python-snipeit-client/src/snipeit"
+      - "./django-classified/django_classified:/srv/django-classified/django_classified"
       - "./shared:/shared"
     ports:
       - "8000:8000"

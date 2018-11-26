@@ -1,3 +1,4 @@
 -r common.pip
 
 git+https://github.com/pkucmus/python-snipeit-client@8db6e5a#egg=python-snipeit-client
+git+https://github.com/pkucmus/django-classified@15c8a5d#egg=django-classified

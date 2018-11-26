@@ -13,7 +13,6 @@ setup(
     license='MIT',
     install_requires=[
         'django',
-        'django-classified',
         'requests'
     ],
     author_email='pkucmus@gmail.com',

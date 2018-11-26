@@ -17,5 +17,7 @@ services:
       EMAIL_HOST: "smtp"
       EMAIL_PORT: 1025
       EMAIL_FROM: "pawel.kucmus@stxnext.pl"
+      ADMIN_EMAIL: "pawel.kucmus+admin@stxnext.pl"
+      ACCOUNTANT_EMAIL: "pawel.kucmus+accountant@stxnext.pl"
     extra_hosts:
       - "snipeit.stxnext.local:10.93.1.37"
