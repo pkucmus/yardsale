@@ -8,20 +8,20 @@
 | YARDSALE_DATABASE_NAME     | Name of the database schema                                                                                                                    | `"yardsale"`                          |  
 | YARDSALE_DATABASE_USER     | Database user that is allowed to reach and modify the database schema                                                                          | `"postgres"`                          |  
 | YARDSALE_DATABASE_PASSWORD | Password for the database user                                                                                                                 | `"password"`                          |  
-| YARDSALE_DATABASE_HOST     | Host through which the service will be able to reach the database service                                                                      | `"db"`                                |  
-| YARDSALE_DATABASE_PORT     | Port on which the database service is listening                                                                                                | `5432`                                |  
-| ALLOWED_HOSTS              | Django's allowed hosts protection configuration - define the host through which the service will be reached (comma separated for many values)  | `"127.0.0.1,10.93.7.16"`              |  
-| SNIPEIT_URL                | URL through which the service will be able to reach the SnipeIt service                                                                        | `"https://snipeit.stxnext.local"`     |  
+| YARDSALE_DATABASE_HOST     | Host through which the service will be able to reach the database service                                                                      | `"<host>"`                                |  
+| YARDSALE_DATABASE_PORT     | Port on which the database service is listening                                                                                                | `<port>`                                |  
+| ALLOWED_HOSTS              | Django's allowed hosts protection configuration - define the host through which the service will be reached (comma separated for many values)  | `"127.0.0.1"`              |  
+| SNIPEIT_URL                | URL through which the service will be able to reach the SnipeIt service                                                                        | `"<url>"`     |  
 | SNIPEIT_API_JWT            | SnipeIt API JWT                                                                                                                                | `${SNIPEIT_JWT}`                      |  
 | SNIPEIT_HTTPS_VERIFY       | Unix path to the ca-storage containing self-signed certificates or string `false` do disable https verification                                | `"false"`                             |  
 | EMAIL_HOST                 | Host through which the service will be able to reach the SMTP service                                                                          | `"smtp"`                              |  
 | EMAIL_PORT                 | Port on which the SMTP service is listening                                                                                                    | `1025`                                |  
-| EMAIL_FROM                 | Specifies the from field in an outgoing email from the service                                                                                 | `"developer@stxnext.pl"`              |  
-| EMAIL_HOST_USER            | Username to authenticate in the SMTP service (if required)                                                                                     | `"developer@stxnext.pl"`              |  
+| EMAIL_FROM                 | Specifies the from field in an outgoing email from the service                                                                                 | `"<email>"`              |  
+| EMAIL_HOST_USER            | Username to authenticate in the SMTP service (if required)                                                                                     | `"<email>"`              |  
 | EMAIL_HOST_PASSWORD        | Password for the SMTP user (if required)                                                                                                       | `"smtp_pass"`                         |  
 | SENTRY_DSN                 | Provide your Sentry DSN to enable Sentry logging                                                                                               | `"https://<key>@sentry.io/<project>"` |  
-| ADMIN_EMAIL                | Inventory admin's email address                                                                                                                | `"admin@stxnext.pl"`                  |  
-| ACCOUNTANT_EMAIL           | Accountant's email address                                                                                                                     | `"accountant@stxnext.pl"`             |  
+| ADMIN_EMAIL                | Inventory admin's email address                                                                                                                | `"<email>"`                  |  
+| ACCOUNTANT_EMAIL           | Accountant's email address                                                                                                                     | `"<email>"`             |  
 
 
 ## Development
